@@ -82,12 +82,12 @@ Place your subject's DICOM data into the `data/raw_dicom/` directory, following 
 
 ```
 data/raw_dicom/
-└── {subject_id}/                     # e.g., Volunteer_012
-    ├─────────── DENSE04_AveMag/      # e.g., Slice_04 magnitude dicom files
-    ├─────────── DENSE04_x-encPha/    # e.g., Slice_04 phase X dicom files
-    ├─────────── DENSE04_y-encPha/    # e.g., Slice_04 phase Y dicom files
-    ├─────────── DENSE04_z-encPha/    # e.g., Slice_04 phase Z dicom files
-    └── ...                           # e.g., Other Slices with structure simialr to above
+└── Vol_***/                          # e.g., Vol_012           : Voluntee 012 
+    ├─────────── DENSE**_AveMag/      # e.g., DENSE04_AveMag    : Slice 04 magnitude dicom files
+    ├─────────── DENSE**_x-encPha/    # e.g., DENSE04_x-encPha  : Slice 04 phase X dicom files
+    ├─────────── DENSE**_y-encPha/    # e.g., DENSE04_y-encPha  : Slice 04 phase Y dicom files
+    ├─────────── DENSE**_z-encPha/    # e.g., DENSE04_z-encPha  : Slice 04 phase Z dicom files
+    └── ...                           # e.g.,                   : Other Slices with structure simialr to above
 ```
 
 ### Step 2: Run the Full Pipeline
@@ -120,12 +120,23 @@ LVASD/
 ├── nn_unet_image.tar                 # Docker image (after download)
 ├── requirements.txt
 ├── data/
-│   └── raw_dicom/                    # INPUT: Raw DICOM data
+│   ├── raw_dicom/                    # INPUT: Raw DICOM data
+│   └── processed/                    # Processed INPUT
+│   │   ├── raw_images/               # All frames PNG files (magnitude + 3 phases)
+│   │   ├── raw_json/                 # Subjects' dicom header info
+│   │   └── raw_nifti/                # Data stored in NIFTI format to pass to segmenation sectio
 ├── segmentation/
 │   ├── run_nnUNet_prediction.py      # (Called automatically) Wrapper for Docker
 │   └── docker_map/                   # nnU-Net model weights (after download)
 ├── pipeline/
-└── results/                          # OUTPUT: Final analysis results
+└── results/                          # OUTPUT: Final analysis results 
+│   ├── displacement/                 # Displacement at original voxel centroid (vtk & npy)
+│   ├── displacement_query/           # Displacement at query points (vtk & npy)
+│   ├── phase_unwrapping/             # Phase Unwrapped vs. Phase Wrapped frames (png)  -- set save_unwrap=True in the automatic implementation
+│   ├── resting_mask/                 # Resting Mask for each slice
+│   ├── segmentation/                 # Segmentaiton Results
+│   └── strain/                       # Strains at query points (point-wise strain, region-wise strain, slice-wise strain, slice-wise median, and strin maps at peak systole)
+
 ```
 
 ---
