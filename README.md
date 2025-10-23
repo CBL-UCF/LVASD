@@ -100,7 +100,7 @@ python automatic_implementation.py <subject_id>
 
 **Example:**
 ```bash
-python automatic_implementation.py Volunteer_012
+python automatic_implementation.py Vol_012
 ```
 
 The script will handle everything: preprocessing the data, preparing it for nnU-Net, **automatically calling Docker to perform the segmentation**, running the strain analysis, and saving the results.
@@ -114,7 +114,7 @@ All final outputs are saved to your local `results/` directory.
 ## 6. Codebase Architecture
 
 ```
-LVASD_GitHub/
+LVASD/
 ├── automatic_implementation.py       # Main pipeline controller - RUN THIS
 ├── download_docker.py                # Setup script for assets
 ├── nn_unet_image.tar                 # Docker image (after download)
