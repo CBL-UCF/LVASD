@@ -34,13 +34,13 @@ The pipeline is designed for batch processing and requires minimal user interven
 
 Follow these steps to prepare the environment.
 
-### Step 1: Clone the Repository
+### Step 4.1: Clone the Repository
 
     ```bash
     git clone <https://github.com/CBL-UCF/LVASD>
     cd LVASD
     ```
-### Step 2: Install Docker
+### Step 4.2: Install Docker
 
 If you do not have Docker installed, follow the official instructions for your OS:
 * **[Install Docker Engine](https://docs.docker.com/engine/install/)**
@@ -48,13 +48,13 @@ If you do not have Docker installed, follow the official instructions for your O
 For GPU acceleration, you must also install the NVIDIA Container Toolkit:
 * **[NVIDIA Container Toolkit Installation Guide](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)**
 
-### Step 3: Install Python Dependencies
+### Step 4.3: Install Python Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 4: Download Model Weights and Docker Image
+### Step 4.4: Download Model Weights and Docker Image
 
 Run the provided Python script. This will download the nnU-Net model weights (`docker_map` folder) and the pre-built Docker image (`nn_unet_image.tar`).
 
@@ -62,7 +62,7 @@ Run the provided Python script. This will download the nnU-Net model weights (`d
 python download_docker.py
 ```
 
-### Step 5: Load the Docker Image
+### Step 4.5: Load the Docker Image
 
 Load the downloaded image into your local Docker registry.
 
