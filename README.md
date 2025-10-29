@@ -4,7 +4,7 @@
 [![Docker](https://img.shields.io/badge/Docker-required-blue.svg)](https://www.docker.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 1. Overview
+## 1. Overview 🔭
 
 This repository provides a fully automated, end-to-end computational pipeline for the analysis of cardiac DENSE (Displacement Encoding with Stimulated Echoes) MRI. The workflow processes raw DICOM series and executes all necessary steps—including preprocessing, deep learning-based segmentation, phase unwrapping, and tensor calculations—to yield final displacement and strain maps.
 
@@ -12,7 +12,7 @@ The pipeline is designed for batch processing and requires minimal user interven
 
 ---
 
-## 2. Core Components
+## 2. Core Components 🧩
 
 * **Preprocessing Module**: Automates the conversion of multi-slice, multi-phase DICOM files into a structured NIfTI format suitable for analysis.
 * **LV Segmentation**: Integrates a pre-trained **nnU-Net** model to perform robust, automated segmentation of the left ventricle across all cardiac phases.
@@ -21,7 +21,7 @@ The pipeline is designed for batch processing and requires minimal user interven
 
 ---
 
-## 3. System Requirements
+## 3. System Requirements 💻
 
 * **Operating System**: Linux (recommended) or any OS capable of running Docker.
 * **Docker Engine**: Must be installed and running. GPU support (via NVIDIA Container Toolkit) is highly recommended for performance.
@@ -30,11 +30,11 @@ The pipeline is designed for batch processing and requires minimal user interven
 
 ---
 
-## 4. Installation and Setup (One-Time)
+## 4. Installation and Setup (One-Time) 🛠️
 
 Follow these steps to prepare the environment.
 
-### Step 4.1: Clone the Repository
+### Step 4.1: Clone the Repository 
 
     ```bash
     git clone <https://github.com/CBL-UCF/LVASD>
@@ -74,7 +74,7 @@ To verify, run `docker images`. You should see `nn_unet:0.0.1` in the list. The 
 
 ---
 
-## 5. Execution Protocol
+## 5. Execution Protocol 🚀
 
 ### Step 5.1: Data Staging
 
@@ -90,7 +90,7 @@ data/raw_dicom/
     └── ...                           # e.g.,                   : Other Slices with structure simialr to above
 ```
 
-### Step 5.2: Run the Full Pipeline
+### Step 5.2: Run the Full Pipeline 
 
 Execute the main script from the project's root directory. Provide the subject's folder name as a command-line argument.
 
@@ -111,7 +111,7 @@ All final outputs are saved to your local `results/` directory.
 
 ---
 
-## 6. Codebase Architecture
+## 6. Codebase Architecture 📂
 
 ```
 LVASD/
@@ -141,10 +141,10 @@ LVASD/
 
 ---
 
-## 7. Citation
+## 7. Citation 📖
 
 *(                                 )*
 
-## 8. License
+## 8. License 🔑
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
