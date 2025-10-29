@@ -76,7 +76,7 @@ To verify, run `docker images`. You should see `nn_unet:0.0.1` in the list. The 
 
 ## 5. Execution Protocol
 
-### Step 1: Data Staging
+### Step 5.1: Data Staging
 
 Place your subject's DICOM data into the `data/raw_dicom/` directory, following the strict hierarchical structure below:
 
@@ -90,7 +90,7 @@ data/raw_dicom/
     └── ...                           # e.g.,                   : Other Slices with structure simialr to above
 ```
 
-### Step 2: Run the Full Pipeline
+### Step 5.2: Run the Full Pipeline
 
 Execute the main script from the project's root directory. Provide the subject's folder name as a command-line argument.
 
@@ -105,7 +105,7 @@ python automatic_implementation.py Vol_012
 
 The script will handle everything: preprocessing the data, preparing it for nnU-Net, **automatically calling Docker to perform the segmentation**, running the strain analysis, and saving the results.
 
-### Step 3: Accessing Results
+### Step 5.3: Accessing Results
 
 All final outputs are saved to your local `results/` directory.
 
