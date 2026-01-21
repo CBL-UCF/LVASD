@@ -1,4 +1,4 @@
-# Left Ventricle Automated Strain of DENSE (LVASD) MRI Evaluation
+# Left Ventricle Automated Strain from DENSE (LVASD) MRI
 
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Docker](https://img.shields.io/badge/Docker-required-blue.svg)](https://www.docker.com/)
